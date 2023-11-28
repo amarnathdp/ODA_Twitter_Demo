@@ -105,8 +105,8 @@ const client = new TwitterApi({
 const rwClient = client.readWrite
 const tweet = async () => {
     try {
-        const user = await rwClient.v1.userByUsername('Amarnatdp');
-        console.log(user);
+        // const user = await rwClient.v1.userByUsername('Amarnatdp');
+        // console.log(user);
         await rwClient.v1.tweet("Hello Twitter")
     } catch (error) {
         console.log("Error...");    
