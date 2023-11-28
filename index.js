@@ -111,22 +111,22 @@ const tweet = async () => {
     // } catch (error) {
     //     console.log("Error...");    
     // }
-    await rwClient.v2.tweet("Hello Twitter, This is demo...###").then(()=>{
+    await rwClient.v2.tweet("Hello Twitter, this is from developer tool").then(()=>{
         console.log("Tweet...")
     }, e => console.log(e))
 }
 
 tweet();
 
-const streamFilter = async() => {
-    await rwClient.v1.filterStream({
-        // See FilterStreamParams interface.
-        track: 'apple',
-      //   follow: [1842984n, '1850485928354'],
-      });
-}
+// const streamFilter = async() => {
+//     await rwClient.v1.filterStream({
+//         // See FilterStreamParams interface.
+//         track: 'apple',
+//       //   follow: [1842984n, '1850485928354'],
+//       });
+// }
 
-streamFilter()
+// streamFilter()
 
 
 
