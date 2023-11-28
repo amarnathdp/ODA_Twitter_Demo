@@ -86,8 +86,8 @@ webhook.on(WebhookEvent.MESSAGE_RECEIVED, recievedMessage => {
 const client = new TwitterApi( {
             appKey:         'cp3dD2nxMzmt8WmzYD8LycG0H',
             appSecret:      '0CQuw4o52Fi9ayejEYG9BcX1w3Pof8QGxnlwGGTnkopTisVLUd',
-            accessToken:         '1729027293795033089-hNLAu0lWeO4pZRbkJsv3osTekl4MYw',
-            accessTokenSecret:  'kzKRpAKvBqeXRDfszFbzPa2EZQWSNTHSGodPEdRUFXL0i',
+            accessToken:         'Vmx3OTh6ZzI4SUdha0pyS25nODE6MTpjaQ',
+            accessTokenSecret:  'StaWzTP1kAsTQOJIEOqMxPwguAQNe9EWD1c-b16i9Fyh4O6lCW',
 })
 
 const rwClient = client.readWrite
