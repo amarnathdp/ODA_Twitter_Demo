@@ -53,7 +53,7 @@ var T = new Twit({
 
 var stream = T.stream('statuses/filter', { track: '#ODATwitterIntegration'})
  
-stream.on('tweet', function (tweet) {
+stream.on('tweets', function (tweet) {
   console.log(tweet)
   console.log(tweet.tweet)
   let user = tweet.user.screen_name
