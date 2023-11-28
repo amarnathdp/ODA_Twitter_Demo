@@ -51,7 +51,9 @@ var T = new Twit({
   strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
 
-var stream = T.stream('statuses/filter', { track: '#ODATwitterIntegration'})
+// var stream = T.stream('statuses/filter', { track: '#ODATwitterIntegration'})
+
+var stream = T.stream('statuses/filter', { track: '@Amarnatdp' });
  
 stream.on('tweets', function (tweet) {
   console.log(tweet)
@@ -66,16 +68,16 @@ stream.on('tweets', function (tweet) {
     messagePayload: MessageModel.textConversationMessage(text)
   }
 
-    webhook.send(message).then(()=>{
-    console.log("Messahe Sent")
-    }, e => console.log("error message" + e.message))
+    // webhook.send(message).then(()=>{
+    // console.log("Messahe Sent")
+    // }, e => console.log("error message" + e.message))
     
 
-  // try {
-  //   webhook.send(message)
-  // } catch (error) {
-  //   console.log(error);   
-  // }
+  try {
+    webhook.send(message)
+  } catch (error) {
+    console.log(error);   
+  }
 })
 
 
