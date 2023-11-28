@@ -94,7 +94,7 @@ const rwClient = client.readWrite
 
 const tweet = async () =>{
     try {
-        await rwClient.v2.tweet('Hello, this is a test.');
+        await rwClient.v1.tweet('Hello, this is a test.');
     } catch (error) {
         console.log(error);    
     }
