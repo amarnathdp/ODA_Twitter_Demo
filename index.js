@@ -60,7 +60,15 @@ var T = new Twit({
 
 T.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {
     console.log(data)
+    // console.log(response);
+    console.log(err);
   })
+
+  var stream = T.stream('statuses/filter', { track: '#apple', language: 'en' })
+ 
+stream.on('tweet', function (tweet) {
+  console.log(tweet)
+})
  
 // stream.on('tweet', function (tweet) {
 //   console.log(tweet)
