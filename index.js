@@ -51,7 +51,7 @@ var T = new Twit({
   strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
 
-var stream = T.stream('statuses/filter', { track: ['#ODATwitterIntegration'] })
+var stream = T.stream('statuses/filter', { track: '#ODATwitterIntegration'})
  
 stream.on('tweet', function (tweet) {
   console.log(tweet)
