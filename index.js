@@ -66,11 +66,16 @@ stream.on('tweet', function (tweet) {
     messagePayload: MessageModel.textConversationMessage(text)
   }
 
-  try {
-    webhook.send(message)
-  } catch (error) {
-    console.log(error);   
-  }
+    webhook.send(message).then(()=>{
+    console.log("Messahe Sent")
+    }, e => console.log("error message" + e.message))
+    
+
+  // try {
+  //   webhook.send(message)
+  // } catch (error) {
+  //   console.log(error);   
+  // }
 })
 
 
