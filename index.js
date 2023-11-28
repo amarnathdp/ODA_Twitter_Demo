@@ -43,17 +43,17 @@ webhook.on(WebhookEvent.MESSAGE_RECEIVED, recievedMessage => {
 
 
 var T = new Twit({
-  consumer_key:         'x5LGxkuQuOe91D87MddH7V4bo',
-  consumer_secret:      'QByMt9TV8gH2hi0wBpslhLVctF1lqs5RGvjfneHSEmICCjnT5n',
-  access_token:         '1729027293795033089-X3Uo7ayJgEOPxfuONRoq6MSVwpVgr1',
-  access_token_secret:  'i19ti5SwnOwZwv7RyHP192al1n3PoAY1Fptulqg6eZhXt',
-  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
-  strictSSL:            true,     // optional - requires SSL certificates to be valid.
+ consumer_key:         'cp3dD2nxMzmt8WmzYD8LycG0H',
+  consumer_secret:      '0CQuw4o52Fi9ayejEYG9BcX1w3Pof8QGxnlwGGTnkopTisVLUd',
+  access_token:         '1729027293795033089-hNLAu0lWeO4pZRbkJsv3osTekl4MYw',
+  access_token_secret:  'kzKRpAKvBqeXRDfszFbzPa2EZQWSNTHSGodPEdRUFXL0i',
+  // timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
+  // strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
 
-// var stream = T.stream('statuses/filter', { track: '#ODATwitterIntegration'})
+var stream = T.stream('statuses/filter', { track: '#ODATwitterIntegration'})
 
-var stream = T.stream('statuses/filter', { track: '@Amarnatdp' });
+// var stream = T.stream('statuses/filter', { track: '@Amarnatdp' });
  
 stream.on('tweets', function (tweet) {
   console.log(tweet)
