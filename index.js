@@ -105,9 +105,9 @@ const client = new TwitterApi({
 const rwClient = client.readWrite
 const tweet = async () => {
     try {
-        // const user = await rwClient.v1.userByUsername('Amarnatdp');
-        // console.log(user);
-        await rwClient.v2.tweet("Hello Twitter, this is new ODA Integration test")
+        const user = await rwClient.v1.userByUsername('Amarnatdp');
+        console.log(user);
+        // await rwClient.v2.tweet("Hello Twitter, this is new ODA Integration test")
     } catch (error) {
         console.log("Error...");    
     }
