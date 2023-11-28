@@ -2,7 +2,7 @@ const express = require("express");
 const body_parser = require("body-parser");
 const axios = require("axios");
 const OracleBot = require('@oracle/bots-node-sdk');
-// const Twit = require('twit');
+const Twit = require('twit');
 
 const { TwitterApi } = require("twitter-api-v2");
 
@@ -29,7 +29,7 @@ webhook
 app.post('/bot/message', webhook.receiver()); // receive bot messages
 
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(3000, () => {
     console.log("Webhook is listening...");
 });
 
@@ -46,17 +46,21 @@ webhook.on(WebhookEvent.MESSAGE_RECEIVED, recievedMessage => {
 });
 
 
-// var T = new Twit({
-//     consumer_key:         'cp3dD2nxMzmt8WmzYD8LycG0H',
-//     consumer_secret:      '0CQuw4o52Fi9ayejEYG9BcX1w3Pof8QGxnlwGGTnkopTisVLUd',
-//     access_token:         '1729027293795033089-hNLAu0lWeO4pZRbkJsv3osTekl4MYw',
-//     access_token_secret:  'kzKRpAKvBqeXRDfszFbzPa2EZQWSNTHSGodPEdRUFXL0i',
-// //   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
-// //   strictSSL:            true,     // optional - requires SSL certificates to be valid.
-// })
+var T = new Twit({
+    consumer_key: "cp3dD2nxMzmt8WmzYD8LycG0H",
+    consumer_secret: "0CQuw4o52Fi9ayejEYG9BcX1w3Pof8QGxnlwGGTnkopTisVLUd",
+    access_token: "1729027293795033089-kSdl2L9QCoh78J3g2vASqUoXTNCREv",
+    access_token_secret: "pfK6vgiVdoJsAfpyUv64iOiWodtma0j3LE8HFj6pAgRtm"
+//   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
+//   strictSSL:            true,     // optional - requires SSL certificates to be valid.
+})
 
 // let stream = T.stream('statuses/filter', { track: '#ODATwitterIntegration' })
 // // 1729103096067096576Amarnatdp
+
+T.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {
+    console.log(data)
+  })
  
 // stream.on('tweet', function (tweet) {
 //   console.log(tweet)
@@ -83,25 +87,23 @@ webhook.on(WebhookEvent.MESSAGE_RECEIVED, recievedMessage => {
 // //   }
 // })
 
-const client = new TwitterApi({
-    appKey: "cp3dD2nxMzmt8WmzYD8LycG0H",
-    appSecret: "0CQuw4o52Fi9ayejEYG9BcX1w3Pof8QGxnlwGGTnkopTisVLUd",
-    accessToken: "1729027293795033089-kSdl2L9QCoh78J3g2vASqUoXTNCREv",
-    accessSecret: "pfK6vgiVdoJsAfpyUv64iOiWodtma0j3LE8HFj6pAgRtm"
-})
+// const client = new TwitterApi({
+//     appKey: "cp3dD2nxMzmt8WmzYD8LycG0H",
+//     appSecret: "0CQuw4o52Fi9ayejEYG9BcX1w3Pof8QGxnlwGGTnkopTisVLUd",
+//     accessToken: "1729027293795033089-kSdl2L9QCoh78J3g2vASqUoXTNCREv",
+//     accessSecret: "pfK6vgiVdoJsAfpyUv64iOiWodtma0j3LE8HFj6pAgRtm"
+// })
 
+// const rwClient = client.readWrite
+// const tweet = async () => {
+//     try {
+//         await rwClient.v1.tweet("Hello Twitter")
+//     } catch (error) {
+//         console.log("Error...");    
+//     }
+// }
 
-const rwClient = client.readWrite
-
-const tweet = async () =>{
-    try {
-        await rwClient.v1.tweet('Hello, this is a test.');
-    } catch (error) {
-        console.log(error);    
-    }
-}
-
-tweet();
+// tweet();
 
 
 
