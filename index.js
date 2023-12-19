@@ -111,7 +111,7 @@ const tweet = async () => {
     // } catch (error) {
     //     console.log("Error...");    
     // }
-    await rwClient.v2.tweet("Hello Twitter, Good Morning this is from Twitter ChatBOT").then(()=>{
+    await rwClient.v2.tweet("Hello Twitter, Good Evening, this from CHATBOT.....").then(()=>{
         console.log("Tweet...")
     }, e => console.log(e))
 }
